@@ -6,7 +6,7 @@ import { useBookings } from "./useBookings";
 import Spinner from "../../ui/Spinner";
 
 function BookingTable() {
-  const { isPending, bookings } = useBookings;
+  const { isPending, bookings } = useBookings();
 
   if (isPending) return <Spinner />;
 
@@ -24,12 +24,12 @@ function BookingTable() {
           <div></div>
         </Table.Header>
 
-        {/*<Table.Body
+        <Table.Body
           data={bookings}
           render={(booking) => (
             <BookingRow key={booking.id} booking={booking} />
           )}
-          />*/}
+        />
       </Table>
     </Menus>
   );
